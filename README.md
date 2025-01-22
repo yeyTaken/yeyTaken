@@ -1,7 +1,3 @@
-<h1 align="center">
-  <img src="./src/assets/img/eukkj.jpg" width="80px" height="80px" style="border-radius: 50%;"/>
-</h1>
-
 <h1 align="center">Olá, me chamo Rabi!</h1>
 
 <h3 align="center">Eu sou o Israel R. Jatobá, um iniciante no mundo da programação e faço projetos nas horas vagas.</h3>
@@ -23,5 +19,5 @@
 
 <div align="center" style="margin-top: 30px;">
   <h2 style="color: #4E5D94;">💻 Habilidades & Ferramentas</h2>
-  <img src="https://skillicons.dev/icons?i=djs,js,ts,nodejs,discordjs,npm,mongodb,vscode,git,linux,yeyTaken" />
+  <img src="https://skillicons.dev/icons?i=djs,js,ts,nodejs,discordjs,npm,bun, mongodb,vscode,git,linux" />
 </div>
