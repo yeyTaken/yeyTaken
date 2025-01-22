@@ -19,5 +19,5 @@
 
 <div align="center" style="margin-top: 30px;">
   <h2 style="color: #4E5D94;">💻 Habilidades & Ferramentas</h2>
-  <img src="https://skillicons.dev/icons?i=djs,js,ts,nodejs,discordjs,npm,bun, mongodb,vscode,git,linux" />
+  <img src="https://skillicons.dev/icons?i=djs,js,ts,nodejs,discordjs,npm,bun,mongodb,vscode,git,linux, nextjs" />
 </div>
