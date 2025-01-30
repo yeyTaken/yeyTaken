@@ -38,13 +38,13 @@
 ###
 
 <div align="left" style="margin-top: 20px;">
-  <a href="https://www.npmjs.com/" target="_blank">
+  <a href="https://www.npmjs.com/yeytakeen" target="_blank">
     <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" height="35" alt="npm logo" />
   </a>
-  <a href="https://www.instagram.com/" target="_blank">
+  <a href="https://www.instagram.com/rabbikkj" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" height="35" alt="instagram logo" />
   </a>
-  <a href="https://discord.com/" target="_blank">
+  <a href="https://atos.js.org/discord" target="_blank">
     <img src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" height="35" alt="discord logo" />
   </a>
 </div>
