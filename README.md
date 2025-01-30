@@ -1,4 +1,4 @@
-<h1 align="center" style="color:#c6a0f6;">👋Olá, me chamo Rabi!</h1>
+<h1 align="center" style="color:#c6a0f6;">Olá 👋, me chamo Rabi!</h1>
 
 ###
 
