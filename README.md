@@ -32,7 +32,7 @@
 ###
 
 <div align="left" style="margin-top: 20px;">
-  <img src="https://skillicons.dev/icons?i=js,ts,nodejs,bun,npm,mongodb,firebase,nextjs" alt="Tecnologias" />
+  <img src="https://skillicons.dev/icons?i=js,ts,kotlin,nodejs,bun,npm,mongodb,firebase,vscode,kali,archlinux" alt="Tecnologias" />
 </div>
 
 ###
