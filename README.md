@@ -38,7 +38,7 @@
 ###
 
 <div align="left" style="margin-top: 20px;">
-  <a href="https://www.npmjs.com/yeytakeen" target="_blank">
+  <a href="https://www.npmjs.com/~yeytakeen" target="_blank">
     <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white" height="35" alt="npm logo" />
   </a>
   <a href="https://www.instagram.com/rabbikkj" target="_blank">
