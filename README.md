@@ -19,13 +19,19 @@
 
 <div align="center">
   <a href="https://github.com/yeyTaken/atosjs" target="_blank" style="text-decoration: none;">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeyTaken&repo=atosjs&hide_border=true&title_color=c6a0f6&text_color=94e2d5&icon_color=f2cdcd&bg_color=1e1e2e" alt="AtosJS">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeyTaken&repo=atosjs" alt="AtosJS">
+  </a>
+</div>
+
+<div align="center">
+  <a href="https://github.com/yeyTaken/pokemon-web-api" target="_blank" style="text-decoration: none;">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=yeyTaken&repo=pokemon-web-api" alt="pokemon-web-api">
   </a>
 </div>
 
 ###
 
-<div align="right" style="margin-top: 20px;">
+<div align="left" style="margin-top: 20px;">
   <img height="150" src="https://i.imgflip.com/65efzo.gif" />
 </div>
 
