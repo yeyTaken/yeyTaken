@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;500&display=swap");
+
+@import "tailwindcss";
+
+@import "./root.css";
+@import "./themes/index.css";
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, sans-serif);
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes pulseSlow {
+  0%,
+  100% {
+    opacity: 0.05;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+.animate-fadeUp {
+  animation: fadeUp 1s ease forwards;
+}
+.animate-fadeIn {
+  animation: fadeIn 2s ease forwards;
+}
+.animate-pulseSlow {
+  animation: pulseSlow 6s ease-in-out infinite;
+}
