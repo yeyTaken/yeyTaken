@@ -3,10 +3,25 @@
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { FiUser, FiMail, FiSettings, FiChevronRight } from "react-icons/fi";
+import { useTheme } from "next-themes";
 
-import type { MenuItem, Position } from "@/types/ContextMenu";
+import { MenuItem, Position } from "@/types/Contextmenu";
+import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 export default function ContextMenu() {
+  const { theme, setTheme } = useTheme();
+
+  // const [showContextMenu, setShowContextMenu] = useState(false);
+
+  // useEffect(() => {
+  //   const isMobile = /iPhone|Android/i.test(navigator.userAgent);
+  //   if (!isMobile) {
+  //     setShowContextMenu(true);
+  //   }
+  // }, []);
+
+  // if (!showContextMenu) return null;
+
   const [visible, setVisible] = useState(false);
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 });
   const [openToLeft, setOpenToLeft] = useState(false);
@@ -26,9 +41,17 @@ export default function ContextMenu() {
       name: "Configurações",
       icon: <FiSettings size={18} />,
       children: [
-        { name: "Tema", icon: <FiSettings size={16} />, href: "/configuracoes/tema" },
-        { name: "Perfil", icon: <FiUser size={16} />, href: "/configuracoes/perfil" },
-        { name: "Segurança", icon: <FiMail size={16} />, href: "/configuracoes/seguranca" },
+        { name: "Tema" }, // agora sem icon fixo
+        {
+          name: "Perfil",
+          icon: <FiUser size={16} />,
+          href: "/configuracoes/perfil",
+        },
+        {
+          name: "Segurança",
+          icon: <FiMail size={16} />,
+          href: "/configuracoes/seguranca",
+        },
       ],
     },
   ];
@@ -36,25 +59,19 @@ export default function ContextMenu() {
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
       e.preventDefault();
-
-      const x = e.pageX;
-      const y = e.pageY;
-      setPosition({ x, y });
+      setPosition({ x: e.pageX, y: e.pageY });
       setVisible(true);
       setFixedOpenItem(null);
 
       setTimeout(() => {
         if (menuRef.current) {
-          const menuRect = menuRef.current.getBoundingClientRect();
-          const windowWidth = window.innerWidth;
-          const windowHeight = window.innerHeight;
+          const rect = menuRef.current.getBoundingClientRect();
+          setOpenToLeft(e.pageX + rect.width > window.innerWidth);
 
-          setOpenToLeft(x + menuRect.width > windowWidth);
-
-          if (y + menuRect.height > windowHeight) {
-            setPosition(pos => ({
+          if (e.pageY + rect.height > window.innerHeight) {
+            setPosition((pos) => ({
               ...pos,
-              y: Math.max(windowHeight - menuRect.height - 10, 10)
+              y: Math.max(window.innerHeight - rect.height - 10, 10),
             }));
           }
         }
@@ -80,26 +97,24 @@ export default function ContextMenu() {
 
   useEffect(() => {
     if ((hoveredItem || fixedOpenItem) && submenuRef.current) {
-      const submenuRect = submenuRef.current.getBoundingClientRect();
-      const windowWidth = window.innerWidth;
-      const windowHeight = window.innerHeight;
+      const rect = submenuRef.current.getBoundingClientRect();
+      setSubmenuOpenToLeft(rect.right > window.innerWidth);
 
-      setSubmenuOpenToLeft(submenuRect.right > windowWidth);
-
-      if (submenuRect.bottom > windowHeight) {
-        submenuRef.current.style.top = `auto`;
-        submenuRef.current.style.bottom = `0`;
+      if (rect.bottom > window.innerHeight) {
+        submenuRef.current.style.top = "auto";
+        submenuRef.current.style.bottom = "0";
       } else {
-        submenuRef.current.style.top = `0`;
-        submenuRef.current.style.bottom = `auto`;
+        submenuRef.current.style.top = "0";
+        submenuRef.current.style.bottom = "auto";
       }
     }
   }, [hoveredItem, fixedOpenItem]);
 
   const menuStyle = {
     top: position.y,
-    left: openToLeft ? Math.max(position.x - (menuRef.current?.offsetWidth ?? 180), 0) : position.x,
-    border: "1px solid var(--border-line)",
+    left: openToLeft
+      ? Math.max(position.x - (menuRef.current?.offsetWidth ?? 180), 0)
+      : position.x,
   };
 
   return (
@@ -107,41 +122,40 @@ export default function ContextMenu() {
       {visible && (
         <div
           ref={menuRef}
-          className="fixed z-[99999] bg-[#101010] p-3 rounded-xl shadow-lg min-w-[180px] border"
+          className="fixed z-[99999] bg-background/80 p-3 rounded-xl shadow-lg min-w-[180px] border border-neutral-300 dark:border-neutral-700"
           style={menuStyle}
         >
           <ul className="flex flex-col space-y-1 relative">
             {Items.map((item, idx) => {
               if (item.type === "divider") {
                 return (
-                  <li key={idx} className="border-t" style={{ borderColor: "var(--border-line)" }}></li>
+                  <li
+                    key={idx}
+                    className="border-t border-neutral-300 dark:border-neutral-700"
+                  ></li>
                 );
               }
 
               if (item.children) {
-                const isOpen = fixedOpenItem === item.name || hoveredItem === item.name;
+                const isOpen =
+                  fixedOpenItem === item.name || hoveredItem === item.name;
 
                 return (
                   <li
                     key={idx}
-                    onMouseEnter={() => {
-                      if (!fixedOpenItem) setHoveredItem(item.name ?? null);
-                    }}
-                    onMouseLeave={() => {
-                      if (!fixedOpenItem) setHoveredItem(null);
-                    }}
+                    onMouseEnter={() =>
+                      !fixedOpenItem && setHoveredItem(item.name ?? null)
+                    }
+                    onMouseLeave={() => !fixedOpenItem && setHoveredItem(null)}
                     className="relative"
                   >
                     <div
-                      onClick={() => {
-                        if (fixedOpenItem === item.name) {
-                          setFixedOpenItem(null);
-                          setHoveredItem(null);
-                        } else {
-                          setFixedOpenItem(item.name ?? null);
-                        }
-                      }}
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-[#2a2a2a]/50 transition-colors duration-150 select-none"
+                      onClick={() =>
+                        setFixedOpenItem(
+                          fixedOpenItem === item.name ? null : item.name!
+                        )
+                      }
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 transition-colors duration-150 select-none"
                     >
                       {item.icon}
                       <span className="flex-1">{item.name}</span>
@@ -151,23 +165,43 @@ export default function ContextMenu() {
                     {isOpen && (
                       <ul
                         ref={submenuRef}
-                        className={`absolute ${submenuOpenToLeft ? "right-full -mr-1" : "left-full ml-1"} w-[180px] backdrop-blur-md bg-[#101010] rounded-xl shadow-lg border flex flex-col space-y-1 p-3`}
-                        style={{ borderColor: "var(--border-line)", top: "0" }}
+                        className={`absolute ${submenuOpenToLeft ? "right-full -mr-1" : "left-full ml-1"} 
+                          w-[180px] bg-background/80 rounded-xl shadow-lg border border-neutral-300 dark:border-neutral-700 flex flex-col space-y-1 p-3`}
+                        style={{ top: "0" }}
                       >
                         {item.children.map((child, cidx) => (
                           <li key={cidx}>
-                            <Link
-                              href={child.href ?? "#"}
-                              className="flex items-center gap-3 cursor-pointer hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
-                              onClick={() => {
-                                setVisible(false);
-                                setFixedOpenItem(null);
-                                setHoveredItem(null);
-                              }}
-                            >
-                              {child.icon}
-                              {child.name}
-                            </Link>
+                            {child.name === "Tema" ? (
+                              <button
+                                className="flex items-center w-full gap-3 cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setTheme(
+                                    theme === "light" ? "dark" : "light"
+                                  );
+                                }}
+                              >
+                                {theme === "light" ? (
+                                  <RiSunLine size={18} />
+                                ) : (
+                                  <RiMoonLine size={18} />
+                                )}
+                                {child.name}
+                              </button>
+                            ) : (
+                              <Link
+                                href={child.href ?? "#"}
+                                className="flex items-center gap-3 cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
+                                onClick={() => {
+                                  setVisible(false);
+                                  setFixedOpenItem(null);
+                                  setHoveredItem(null);
+                                }}
+                              >
+                                {child.icon}
+                                {child.name}
+                              </Link>
+                            )}
                           </li>
                         ))}
                       </ul>
@@ -180,7 +214,7 @@ export default function ContextMenu() {
                 <li key={idx}>
                   <Link
                     href={item.href as string}
-                    className="flex items-center gap-3 cursor-pointer hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
+                    className="flex items-center gap-3 cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
                     onClick={() => {
                       setVisible(false);
                       setFixedOpenItem(null);

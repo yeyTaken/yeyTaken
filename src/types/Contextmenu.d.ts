@@ -1,6 +1,6 @@
 import React from "react";
 
-export interface MenuItem {
+interface MenuItem {
   name?: string;
   icon?: React.ReactNode;
   href?: string;
@@ -8,12 +8,12 @@ export interface MenuItem {
   children?: MenuItem[];
 }
 
-export interface Position {
+interface Position {
   x: number;
   y: number;
 }
 
-export interface ContextMenuState {
+interface ContextMenuState {
   visible: boolean;
   position: Position;
   hoveredItem: string | null;

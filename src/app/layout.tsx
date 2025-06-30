@@ -1,40 +1,59 @@
-import "./styles/globals.css";
+import "@/styles/globals.css";
 
-import type { Metadata } from "next";
+import { Metadata, Viewport } from "next";
+import clsx from "clsx";
+
+import { Providers } from "./providers";
+import { fontSans } from "@/config/fonts";
+
 import ContextMenu from "@/components/ui/ContextMenu";
+import ContextMenuAlert from "@/components/ui/ContextMenu/alert";
+import SocialMediaBar from "@/components/ui/SocialMediaBar";
+import NavBar from "@/components/ui/NavBar";
 
 export const metadata: Metadata = {
   title: {
     default: "IJ",
     template: "%s | Portfólio",
   },
-  description: "Minha página pessoal, portfólio e blog.",
+  description:
+    "Olá, sou Israel R. Jatobá, eu sou um iniciante no mundo da programação e faço projetos nas horas vagas.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
-      <body className="antialiased relative overflow-hidden bg-[var(--background)] min-h-screen">
-        {/* Background global */}
-        <div className="absolute inset-0 pointer-events-none z-0">
-          <div className="w-full h-full bg-gradient-to-br from-[var(--primary)]/10 to-transparent blur-3xl animate-fadeIn" />
-          <div
-            className="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-accent opacity-5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulseSlow"
-            aria-hidden="true"
-          />
-        </div>
+    <html suppressHydrationWarning lang="pt-br">
+      <head />
+      <body
+        className={clsx(
+          "min-h-screen text-foreground bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
+          <div className="relative flex flex-col h-screen">
+            <ContextMenu />
+            <ContextMenuAlert />
+            <SocialMediaBar />
+            <NavBar />
 
-        {/* Context menu sempre disponível */}
-        <ContextMenu />
-
-        {/* Conteúdo da página acima do background */}
-        <div className="relative z-10">
-          {children}
-        </div>
+            <main>{children}</main>
+          </div>
+        </Providers>
       </body>
     </html>
   );
