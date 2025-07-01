@@ -1,8 +1,7 @@
 "use client";
 
 import { Link } from "@heroui/link";
-import { TbHome, TbAlignBoxBottomRight, TbInfoSquareRounded  } from "react-icons/tb";
-
+import { TbHome, TbAlignBoxBottomRight, TbInfoSquareRounded } from "react-icons/tb";
 import { IconType } from "react-icons";
 
 interface Item {
@@ -17,21 +16,21 @@ const items: Item[] = [
     href: "/",
     Icon: TbHome
   },
-    {
+  {
     label: "Sobre mim",
-    href: "/#about-me",
-    Icon: TbInfoSquareRounded 
+    href: "/about-me",
+    Icon: TbInfoSquareRounded
   },
   {
     label: "Projetos",
-    href: "/#projects",
-    Icon: TbAlignBoxBottomRight,
+    href: "/projects",
+    Icon: TbAlignBoxBottomRight
   },
 ];
 
 export default function NavBar() {
   return (
-    <div className="select-none fixed top-4 right-4 flex flex-col items-center gap-4">
+    <div className="select-none fixed z-[99999999] top-4 right-4 flex flex-col items-center gap-4">
       <div className="w-[2px] h-16 bg-gray-600 dark:bg-gray-500 mx-auto mb-2" />
 
       <div className="flex flex-col gap-4 items-center">

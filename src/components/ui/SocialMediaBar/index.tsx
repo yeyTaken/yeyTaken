@@ -5,7 +5,7 @@ import { FaInstagram, FaGithub } from "react-icons/fa6";
 
 export default function SocialMediaBar() {
   return (
-    <div className="select-none fixed bottom-4 left-4 flex flex-col items-center gap-4">
+    <div className="select-none fixed z-[99999999] bottom-4 left-4 flex flex-col items-center gap-4">
       <div className="flex flex-col gap-4 items-center">
         <div className="flex items-center">
           <div className="group">

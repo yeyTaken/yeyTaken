@@ -1,11 +1,10 @@
-import "@/styles/globals.css";
+import "@/app/styles/globals.css";
 
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
 import { fontSans } from "@/config/fonts";
-
 import ContextMenu from "@/components/ui/ContextMenu";
 import ContextMenuAlert from "@/components/ui/ContextMenu/alert";
 import SocialMediaBar from "@/components/ui/SocialMediaBar";
@@ -13,8 +12,8 @@ import NavBar from "@/components/ui/NavBar";
 
 export const metadata: Metadata = {
   title: {
-    default: "IJ",
-    template: "%s | Portfólio",
+    default: "IJ | Portfólio",
+    template: "IJ | %s",
   },
   description:
     "Olá, sou Israel R. Jatobá, eu sou um iniciante no mundo da programação e faço projetos nas horas vagas.",
@@ -51,7 +50,7 @@ export default function RootLayout({
             <SocialMediaBar />
             <NavBar />
 
-            <main>{children}</main>
+            <main className="px-12">{children}</main>
           </div>
         </Providers>
       </body>

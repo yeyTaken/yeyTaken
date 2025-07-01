@@ -122,7 +122,7 @@ export default function ContextMenu() {
       {visible && (
         <div
           ref={menuRef}
-          className="fixed z-[99999] bg-background/80 p-3 rounded-xl shadow-lg min-w-[180px] border border-neutral-300 dark:border-neutral-700"
+          className="select-none fixed z-[99999] bg-background/80 p-3 rounded-xl shadow-lg min-w-[180px] border border-neutral-300 dark:border-neutral-700"
           style={menuStyle}
         >
           <ul className="flex flex-col space-y-1 relative">
