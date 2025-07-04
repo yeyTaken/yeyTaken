@@ -4,9 +4,9 @@ import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { FiUser, FiMail, FiSettings, FiChevronRight } from "react-icons/fi";
 import { useTheme } from "next-themes";
+import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 import { MenuItem, Position } from "@/types/Contextmenu";
-import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 export default function ContextMenu() {
   const { theme, setTheme } = useTheme();
@@ -66,6 +66,7 @@ export default function ContextMenu() {
       setTimeout(() => {
         if (menuRef.current) {
           const rect = menuRef.current.getBoundingClientRect();
+
           setOpenToLeft(e.pageX + rect.width > window.innerWidth);
 
           if (e.pageY + rect.height > window.innerHeight) {
@@ -98,6 +99,7 @@ export default function ContextMenu() {
   useEffect(() => {
     if ((hoveredItem || fixedOpenItem) && submenuRef.current) {
       const rect = submenuRef.current.getBoundingClientRect();
+
       setSubmenuOpenToLeft(rect.right > window.innerWidth);
 
       if (rect.bottom > window.innerHeight) {
@@ -122,7 +124,7 @@ export default function ContextMenu() {
       {visible && (
         <div
           ref={menuRef}
-          className="select-none fixed z-[99999] bg-background/80 p-3 rounded-xl shadow-lg min-w-[180px] border border-neutral-300 dark:border-neutral-700"
+          className="select-none fixed z-[99999998] bg-background/80 p-3 rounded-xl shadow-lg min-w-[180px] border border-neutral-300 dark:border-neutral-700"
           style={menuStyle}
         >
           <ul className="flex flex-col space-y-1 relative">
@@ -132,7 +134,7 @@ export default function ContextMenu() {
                   <li
                     key={idx}
                     className="border-t border-neutral-300 dark:border-neutral-700"
-                  ></li>
+                  />
                 );
               }
 
@@ -143,23 +145,23 @@ export default function ContextMenu() {
                 return (
                   <li
                     key={idx}
+                    className="relative"
                     onMouseEnter={() =>
                       !fixedOpenItem && setHoveredItem(item.name ?? null)
                     }
                     onMouseLeave={() => !fixedOpenItem && setHoveredItem(null)}
-                    className="relative"
                   >
                     <div
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 transition-colors duration-150 select-none"
                       onClick={() =>
                         setFixedOpenItem(
-                          fixedOpenItem === item.name ? null : item.name!
+                          fixedOpenItem === item.name ? null : item.name!,
                         )
                       }
-                      className="flex items-center gap-3 px-3 py-2 rounded-lg cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 transition-colors duration-150 select-none"
                     >
                       {item.icon}
                       <span className="flex-1">{item.name}</span>
-                      <FiChevronRight size={18} className="ml-auto" />
+                      <FiChevronRight className="ml-auto" size={18} />
                     </div>
 
                     {isOpen && (
@@ -177,7 +179,7 @@ export default function ContextMenu() {
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   setTheme(
-                                    theme === "light" ? "dark" : "light"
+                                    theme === "light" ? "dark" : "light",
                                   );
                                 }}
                               >
@@ -186,12 +188,17 @@ export default function ContextMenu() {
                                 ) : (
                                   <RiMoonLine size={18} />
                                 )}
-                                {child.name}
+                                <span className="text-sm">
+                                  Tema:{" "}
+                                  <span className="text-xs font-semibold">
+                                    {theme === "light" ? "Light" : "Dark"}
+                                  </span>
+                                </span>
                               </button>
                             ) : (
                               <Link
-                                href={child.href ?? "#"}
                                 className="flex items-center gap-3 cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
+                                href={child.href ?? "#"}
                                 onClick={() => {
                                   setVisible(false);
                                   setFixedOpenItem(null);
@@ -213,8 +220,8 @@ export default function ContextMenu() {
               return (
                 <li key={idx}>
                   <Link
-                    href={item.href as string}
                     className="flex items-center gap-3 cursor-pointer hover:bg-[#f0f0f0] dark:hover:bg-[#2a2a2a]/50 px-3 py-2 rounded-lg transition-colors duration-150"
+                    href={item.href as string}
                     onClick={() => {
                       setVisible(false);
                       setFixedOpenItem(null);

@@ -9,7 +9,11 @@ export default function SocialMediaBar() {
       <div className="flex flex-col gap-4 items-center">
         <div className="flex items-center">
           <div className="group">
-            <Link href="https://instagram.com/rabikkj" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://instagram.com/rabikkj"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <FaInstagram className="text-foreground hover:text-pink-500 dark:hover:text-pink-400 w-6 h-6 transition-colors" />
             </Link>
             <span className="absolute ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm text-foreground">
@@ -20,7 +24,11 @@ export default function SocialMediaBar() {
 
         <div className="flex items-center">
           <div className="group">
-            <Link href="https://github.com/yeyTaken" target="_blank" rel="noopener noreferrer">
+            <Link
+              href="https://github.com/yeyTaken"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <FaGithub className="text-foreground hover:text-gray-500 dark:hover:text-gray-400 w-6 h-6 transition-colors" />
             </Link>
             <span className="absolute ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-sm text-foreground">
@@ -28,7 +36,6 @@ export default function SocialMediaBar() {
             </span>
           </div>
         </div>
-
       </div>
 
       <div className="w-[2px] h-16 bg-gray-600 dark:bg-gray-500 mx-auto mt-2" />

@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 
+import HomePage from "@/components/app";
+
 export const metadata: Metadata = {
-  title: "IJ | Início",
+  title: "IJ | Apresentação",
+  description: "Página de apresentação do portifólio IJ.",
 };
 
 export default function Home() {
-  return (
-    <section className="flex items-center justify-center min-h-screen bg-gray-900">
-      <h1 className="text-4xl font-bold">Olá, Mundo!</h1>{" "}
-    </section>
-  );
+  return <HomePage />;
 }

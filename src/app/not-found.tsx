@@ -12,9 +12,7 @@ export default function NotFound() {
       </h1>
       <p className="text-xl mb-2">
         Ops! A página
-        <span
-          className="rounded-md px-2 py-0.5 ml-1 inline-block bg-secondary/50 text-secondary border border-secondary"
-        >
+        <span className="rounded-md px-2 py-0.5 ml-1 inline-block bg-secondary/50 text-secondary border border-secondary">
           {pathname}
         </span>{" "}
         não foi encontrada.
