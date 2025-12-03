@@ -1,0 +1,16 @@
+{
+  "homePage": {
+    "title": "Meu Portifólio Pessoal"
+  },
+  "lib": {
+    "i18n": {
+      "localeSwitcher": {
+        "ariaLabel": "Trocar idioma",
+        "languages": {
+          "pt": "Português",
+          "en": "Inglês"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "homePage": {
+    "title": "My Personal Portfolio"
+  },
+  "lib": {
+    "i18n": {
+      "localeSwitcher": {
+        "ariaLabel": "Language Switcher",
+        "languages": {
+          "pt": "Portuguese",
+          "en": "English"
+        }
+      }
+    }
+  }
+}
