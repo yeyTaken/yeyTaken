@@ -1,27 +1,26 @@
-<h1 align="start" style="font-weight: 700; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-  Prazer! Me chamo Israel.
-</h1>
+<h1 align="left">I'm Rabbi</h1>
 
-<h3 align="center" style="color:#6B7280; font-weight: 400; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 600px; margin: 0 auto;">
-  Eu sou Israel R. Jatobá, um iniciante no mundo da programação e faço projetos nas horas vagas.
-</h3>
+### 💻 Currently working on
+- [ARC Studio, Inc.](https://arcstudio.online/en-us)
+  - [AtosJS](https://github.com/arcstudioofc/atos.js)
+  - [ElephantJS](https://github.com/arcstudioofc/elephant.js)
+- [Project Center](https://github.com/yeytaken/project-center)
 
-<div align="left" style="margin-top: 40px;">
-  <img
-    height="150"
-    src="./public/favicon.ico"
-    alt="Favicon"
-    style="border-radius: 16px; box-shadow: 0 4px 14px rgba(0,0,0,0.05);"
-  />
-</div>
+# Ambitions
 
-<div align="left" style="margin-top: 30px;">
-  <img
-    src="https://skillicons.dev/icons?i=ts,nodejs,nextjs,tailwind,pnpm,npm,mongodb,firebase,vscode,arch"
-    alt="Tecnologias"
-    style="filter: grayscale(20%);"
-  />
-</div>
+- 🚀 Deliver cutting-edge technical improvement for developers
+- 📚 Continuously evolve by deepening knowledge and practical mastery
+- 🤝 Actively contribute to the growth of other developers
+
+
+## 🔨 Language and Tools
+
+[![My Skills](https://skillicons.dev/icons?i=typescript,javascript,nodejs,pnpm,next,react,tailwind)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=kotlin)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=discord,discordjs)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=mongodb,firebase)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=vscode,idea,photoshop,archlinux)](https://skillicons.dev)
+
 
 <div align="left" style="margin-top: 30px; display:flex; gap: 12px;">
   <a href="https://rabbi.js.org/npm" target="_blank" rel="noopener noreferrer" style="border-radius: 8px; overflow: hidden;">
