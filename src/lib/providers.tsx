@@ -1,12 +1,11 @@
 "use client";
 
 import { NextIntlClientProvider } from "next-intl";
-import { HeroUIProvider } from "@heroui/react";
+import { HeroUIProvider, ToastProvider } from "@heroui/react";
 
 import { ThemeProvider } from "./theme";
-import { Footer } from "@/components/UI/Footer";
 
-export function Providers({
+export function ProvidersWrapper({
   children,
   locale,
   messages
@@ -19,8 +18,8 @@ export function Providers({
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <NextIntlClientProvider locale={locale} messages={messages} timeZone="America/Sao_Paulo">
         <HeroUIProvider>
-          {children}
-          <Footer />
+          <ToastProvider />
+          <main>{children}</main>
         </HeroUIProvider>
       </NextIntlClientProvider>
     </ThemeProvider>

@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "description": "Israel R. Jatobá's Portfolio - Full Stack Developer"
+  },
+  "Navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "Home": {
+    "status": "Available for new projects",
+    "heroTitle": "Israel R. Jatobá",
+    "heroSubtitle": "Full Stack Developer focused on backend, clean architecture, and high-performance systems.",
+    "github": "GitHub",
+    "contact": "Contact",
+    "aboutTitle": "About Me",
+    "aboutText1": "I work mainly with Node.js, TypeScript, and backend architecture. My passion is building predictable, observable, and easy-to-maintain systems.",
+    "aboutText2": "I believe that quality code is not just about working, but about being sustainable in the long run. If you are looking for solid and well-structured solutions, we are on the same page.",
+    "quote": "If you need a workaround, I'm probably not the right person.",
+    "techTitle": "Technologies",
+    "projectsTitle": "Featured Projects",
+    "viewAll": "View all projects on GitHub",
+    "contactTitle": "Let's Talk?",
+    "contactSubtitle": "I'm always open to new opportunities, collaborations, or just to chat about technology.",
+    "sendEmail": "Send Email",
+    "rights": "All rights reserved.",
+    "navAbout": "About",
+    "navProjects": "Projects",
+    "navContact": "Contact"
+  },
+  "NotFound": {
+    "title": "Page not found!",
+    "prefix": "The path",
+    "suffix": "does not exist.",
+    "backHome": "Back to Home"
+  },
+  "lib": {
+    "i18n": {
+      "localeSwitcher": {
+        "ariaLabel": "Change language",
+        "languages": {
+          "pt-br": "Portuguese",
+          "en-us": "English",
+          "es-es": "Spanish"
+        }
+      }
+    }
+  }
+}

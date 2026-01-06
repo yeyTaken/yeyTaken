@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "description": "Portafolio de Israel R. Jatobá - Desarrollador Full Stack"
+  },
+  "Navbar": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "contact": "Contacto"
+  },
+  "Home": {
+    "status": "Disponible para nuevos proyectos",
+    "heroTitle": "Israel R. Jatobá",
+    "heroSubtitle": "Desarrollador Full Stack enfocado en backend, arquitectura limpia y sistemas de alto rendimiento.",
+    "github": "GitHub",
+    "contact": "Contacto",
+    "aboutTitle": "Sobre Mí",
+    "aboutText1": "Trabajo principalmente con Node.js, TypeScript y arquitectura backend. Mi pasión es construir sistemas previsibles, observables y fáciles de mantener.",
+    "aboutText2": "Creo que el código de calidad não se trata solo de funcionar, sino de ser sostenible a largo plazo. Si buscas soluciones sólidas y bien estructuradas, estamos en la misma página.",
+    "quote": "Si necesitas una chapuza, probablemente no soy la persona adecuada.",
+    "techTitle": "Tecnologías",
+    "projectsTitle": "Proyectos Destacados",
+    "viewAll": "Ver todos los proyectos en GitHub",
+    "contactTitle": "¿Hablamos?",
+    "contactSubtitle": "Siempre estoy abierto a nuevas oportunidades, colaboraciones o simplemente para charlar sobre tecnología.",
+    "sendEmail": "Enviar Correo",
+    "rights": "Todos los derechos reservados.",
+    "navAbout": "Sobre mí",
+    "navProjects": "Proyectos",
+    "navContact": "Contacto"
+  },
+  "NotFound": {
+    "title": "¡Página no encontrada!",
+    "prefix": "La ruta",
+    "suffix": "no existe.",
+    "backHome": "Volver al Inicio"
+  },
+  "lib": {
+    "i18n": {
+      "localeSwitcher": {
+        "ariaLabel": "Cambiar idioma",
+        "languages": {
+          "pt-br": "Portugués",
+          "en-us": "Inglés",
+          "es-es": "Español"
+        }
+      }
+    }
+  }
+}

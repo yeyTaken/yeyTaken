@@ -7,31 +7,25 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-  Skeleton
 } from "@heroui/react";
 
 import { motion, AnimatePresence } from "framer-motion";
-
 import { FiSun, FiMoon } from "react-icons/fi";
 import { LuMonitor } from "react-icons/lu";
-
 import { useEffect, useState } from "react";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    // Defer state update to the next macrotask to avoid synchronous setState in effect
+    const id = window.setTimeout(() => setMounted(true), 0);
+    return () => clearTimeout(id);
+  }, []);
 
-  // 🔹 Skeleton enquanto carrega
-  if (!mounted) {
-    return (
-      <Skeleton
-        isLoaded={false}
-        className="rounded-full w-10 h-10 bg-foreground/10 dark:bg-foreground/20"
-      />
-    );
-  }
+  // Evita erro de hidratação retornando null até carregar no cliente
+  if (!mounted) return null;
 
   const isDark = theme === "dark";
   const isSystem = theme === "system";
@@ -55,7 +49,7 @@ export default function ThemeSwitcher() {
           isIconOnly
           radius="full"
           variant="light"
-          className="min-w-0 h-auto p-2 hover:bg-foreground/10 transition rounded-full"
+          className="min-w-0 h-auto p-2 hover:bg-foreground/10 transition rounded-md"
         >
           <AnimatePresence mode="wait" initial={false}>
             <motion.span
@@ -71,7 +65,11 @@ export default function ThemeSwitcher() {
         </Button>
       </DropdownTrigger>
 
-      <DropdownMenu onAction={(key) => setTheme(String(key))}>
+      <DropdownMenu 
+        onAction={(key) => setTheme(String(key))}
+        selectedKeys={new Set([theme || "system"])}
+        selectionMode="single"
+      >
         <DropdownItem key="light" startContent={<FiSun />}>
           Claro
         </DropdownItem>

@@ -1,15 +1,15 @@
 import {defineRouting} from 'next-intl/routing';
 
-export const defaultLocale = 'en';
+export const defaultLocale = 'en-us';
 
 export const routing = defineRouting({
-  locales: [defaultLocale, 'pt'],
+  locales: [defaultLocale, 'pt-br', 'es-es'],
 
   // rotas customizadas (opcional)
   // pathnames: {
-  //   "/about": {
-  //     en: "/about",
-  //     pt: "/sobre"
+  //   "/team": {
+  //     "en-us": "/team",
+  //     "pt-br": "/equipe"
   //   }
   // },
  

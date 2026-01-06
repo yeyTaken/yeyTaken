@@ -1,10 +1,35 @@
-import { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
+import { NextConfig } from "next";
+
+import { settings } from "@/lib";
 
 const withNextIntl = createNextIntlPlugin("./src/lib/i18n/request.ts");
 
 const nextConfig: NextConfig = {
   reactCompiler: true,
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
+  },
+
+  async redirects() {
+    return [
+      {
+        source: "/github",
+        destination: settings.links.github,
+        permanent: false,
+      }
+    ];
+  },
 };
 
 export default withNextIntl(nextConfig);

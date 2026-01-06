@@ -8,11 +8,10 @@
   - [API](https://github.com/arcstudioofc/api)
 - [Project Center](https://github.com/yeytaken/project-center)
 
-# Ambitions
-
-- 🚀 Deliver cutting-edge technical improvement for developers
-- 📚 Continuously evolve by deepening knowledge and practical mastery
-- 🤝 Actively contribute to the growth of other developers
+> ## Ambitions
+> - 🚀 Deliver cutting-edge technical improvement for developers
+> - 📚 Continuously evolve by deepening knowledge and practical mastery
+> - 🤝 Actively contribute to the growth of other developers
 
 
 ## 🔨 Language and Tools
