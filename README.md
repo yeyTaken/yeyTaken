@@ -7,6 +7,7 @@
   - [Elephant Theme](https://github.com/arcstudioofc/elephant-vscode-theme) (p.s: VS Code)
   - [API](https://github.com/arcstudioofc/api)
 - [Project Center](https://github.com/yeytaken/project-center)
+- [Hytale](https://github.com/yeytaken/hytale)
 
 > ## Ambitions
 > - 🚀 Deliver cutting-edge technical improvement for developers
