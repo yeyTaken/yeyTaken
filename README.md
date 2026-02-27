@@ -3,9 +3,9 @@
 ### 💻 Currently working on
 - [ARC Studio, Inc.](https://arcstudio.online/en-us)
   - [AtosJS](https://github.com/arcstudioofc/atos.js)
-  - [ElephantJS](https://github.com/arcstudioofc/elephant.js)
+  <!-- em desenvolvimento... -->
+  <!-- - [ElephantJS](https://github.com/arcstudioofc/elephant.js) -->
   - [Elephant Theme](https://github.com/arcstudioofc/elephant-vscode-theme) (p.s: VS Code)
-  - [API](https://github.com/arcstudioofc/api)
 - [Project Center](https://github.com/yeytaken/project-center)
 - [Hytale](https://github.com/yeytaken/hytale)
 

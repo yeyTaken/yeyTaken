@@ -1,0 +1,13 @@
+packages:
+  - "api"
+  - "apps/**"
+  - "packages/**"
+  - "web"
+
+catalog:
+  "@arcstudio/config": "^1"
+  typescript: "^5"
+  tsx: "^4"
+  electron: "^40"
+
+injectWorkspacePackages: true

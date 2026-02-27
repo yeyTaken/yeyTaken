@@ -1,0 +1,9 @@
+:root {
+  --background: #ffffff;
+  --foreground: #050408;
+}
+
+.dark {
+  --background: #050408;
+  --foreground: #daceff;
+}

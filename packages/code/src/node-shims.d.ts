@@ -1,0 +1,3 @@
+declare module "node:crypto" {
+  export function randomBytes(size: number): Uint8Array;
+}
