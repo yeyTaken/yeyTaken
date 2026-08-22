@@ -1,0 +1,15 @@
+:root {
+  /* Base */
+  --background: #ffffff;
+  --background-hover: #a4a9c0;
+  --foreground: #000000;
+  --primary: #1d357f;
+
+  /* Estados */
+  --success: #39aa6a;
+  --warning: #b66b2a;
+  --danger: #8e2c21;
+
+  /* UI */
+  --border: #01010112;
+}

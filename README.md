@@ -1,13 +1,9 @@
 <h1 align="left">I'm Rabbi</h1>
 
 ### 💻 Currently working on
-- [ARC Studio, Inc.](https://arcstudio.online/en-us)
-  - [AtosJS](https://github.com/arcstudioofc/atos.js)
-  <!-- em desenvolvimento... -->
-  <!-- - [ElephantJS](https://github.com/arcstudioofc/elephant.js) -->
-  - [Elephant Theme](https://github.com/arcstudioofc/elephant-vscode-theme) (p.s: VS Code)
+- [Verion Studio](https://github.com/verionofc)
+  - [Lumicotta](https://github.com/verionofc/lumicotta) (ps: VS Code Theme)
 - [Project Center](https://github.com/yeytaken/project-center)
-- [Hytale](https://github.com/yeytaken/hytale)
 
 > ## Ambitions
 > - 🚀 Deliver cutting-edge technical improvement for developers

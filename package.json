@@ -1,30 +1,33 @@
 {
   "name": "@yeytaken/root",
-  "description": "portifolio de Israel R. Jatobá, em monorepo.",
+  "version": "1.0.0",
+  "private": true,
   "scripts": {
-    "dev": "turbo dev --parallel",
-    "build": "turbo build --parallel"
+    "start": "bun --filter '*' start",
+    "dev": "bun --filter '*' dev",
+    "build": "bun --filter '*' build"
   },
-  "dependencies": {
-    "typescript": "catalog:",
-    "tsx": "catalog:",
-    "turbo": "^2.5.4"
+  "devDependencies": {
+    "@types/bun": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
   },
-  "workspaces": [
-    "api",
-    "apps/*",
-    "packages/*",
-    "web"
-  ],
-  "keywords": [
-    ""
-  ],
   "author": {
     "name": "Israel R. Jatobá",
-    "email": "contact.israeljatoba@gmail.com"
+    "organization": "Israel R. Jatobá, Inc.",
+    "email": "contact.israeljatoba@gmail.com",
+    "github": "https://github.com/yeyTaken"
   },
-  "packageManager": "pnpm@10.9.0",
+  "workspaces": [
+    "website"
+  ],
+  "catalog": {
+    "@types/node": "^24",
+    "@types/bun": "^1",
+    "typescript": "^5",
+    "tsx": "^4"
+  },
   "engines": {
-    "node": ">=24"
+    "bun": ">=1"
   }
 }

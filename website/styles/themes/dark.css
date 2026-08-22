@@ -1,0 +1,15 @@
+html.dark {
+  /* Base */
+  --background: #000000;
+  --background-hover: #131313;
+  --foreground: #ffffff;
+  --primary: #a5b5e7;
+  
+  /* Estados */
+  --success: #2e8b57;
+  --warning: #e67e22;
+  --danger: #c0392b;
+
+  /* UI */
+  --border: #f5ead714;
+}
